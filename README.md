@@ -3,12 +3,18 @@
 This is utility class library to use std::thread with C++ classs easier.
 It's based on STL11++ (std::thread, mutex).
 
-What you need to do is to delive ```CTask``` class and override onExecute and the instance to ```CTaskManager``` with ```addTask()```.
+You can use this as Java's concurrent executor but different.
+(For instance, Future.get() is not implemented. This is a kind of just worker thread manager as of now.)
+
+What you need to do are
+ * to derive ```CTask``` class
+ * and override onExecute() on your derived class
+ * and register the instance to ```CTaskManager``` with ```addTask()```.
 
 In general, you need to use global function or static function for ```std::thread``` (not class method).
 But this utility class enables you to use class method for threading.
 
-You can easily manage the threading on multi platforms with this utility class.
+With this, you can easily manage the threading on multi platforms with this utility class.
 
 # How to use
 
@@ -47,7 +53,7 @@ int main() {
 ```
 
 You can use ```cancelTask(CTask*)```, ```stopAllTasks()```.
-In your ```onExecute()``` delived from Class, you can refer to ```mStopRunning``` for checking your thread is needed to stop or not.
+In your ```onExecute()``` derived from CTask class, you can refer to ```mStopRunning``` for checking your thread is needed to stop or not.
 
 # Confirmed environment
 
