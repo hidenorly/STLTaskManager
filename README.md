@@ -1,6 +1,6 @@
 # STLTaskManager
 
-This is utility class library to use std::thread with C++ classs easier.
+This is utility class library to use std::thread with C++ class easier.
 It's based on STL11++ (std::thread, mutex).
 
 You can use this as Java's concurrent executor but different.
@@ -14,7 +14,7 @@ What you need to do are
 In general, you need to use global function or static function for ```std::thread``` (not class method).
 But this utility class enables you to use class method for threading.
 
-With this, you can easily manage the threading on multi platforms with this utility class.
+With this utility class, you can easily manage the threading on multi platforms (supporting C++11 STL).
 
 # How to use
 
